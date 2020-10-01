@@ -23,18 +23,23 @@ fn main() {
         .map(|_line| _line.ok().unwrap().to_string);
     /* add code here ... */
 
-    //fixa till första raden dvs antalet
+    //get första raden dvs antalet
     let n = lines
         .next().unwrap()
         .parse::<u32>().unwrap();
-    //fixa till andra raden som en vektor 
+
+    //spara alla inmatade tal
     let mut nums = lines
         .next().unwrap()
         .split_whitespace()
-        .map(|_num| _num.parse::<u64>().unwrap())
-        .collect::<Vec<u64>>();
+        .map(|component|component.parse::<u32>().unwrap())
+        .collect::<Vec<u32>>();
+        nums.sort(); //sortera nnummer från minst till störst
     
-    if n=
+    //summan av de största talen 
+    let mut sum: u32 =0;
+    if(n%2)== 0
+
     //bestämmer antalet tal som läses in
     //let mut n: usize = lines.next().unwrap().parse().unwrap();
 
