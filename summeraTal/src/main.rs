@@ -38,7 +38,20 @@ fn main() {
     
     //summan av de största talen 
     let mut sum: u32 =0;
-    if(n%2)== 0
+
+    //Kolla om antalet tal är jämnt eller udda
+    if(n%2)== 0 {
+        //antalet tal är jämnt
+
+        //addera alla tal störrelika med medianen till summan
+        for i in (n/2)..n{
+            sum = sum + sum[i as usize];
+        }
+    }
+    else{
+        //antalet tal är jämnt
+        for i in 
+    }
 
     //bestämmer antalet tal som läses in
     //let mut n: usize = lines.next().unwrap().parse().unwrap();
