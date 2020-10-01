@@ -5,7 +5,8 @@
  * See: https://open.kattis.com/help/rust
  * Author: Viola Söderlund <violaso@kth.se>
  */
-
+/*Är medveten om att jag har lite dålig namngivning, dels att jag har lite 
+ospecifika namn samt att de är lite blandad svengelska vilket jag jobbar på*/
 use std::io;
 use std::io::prelude::*;
 
