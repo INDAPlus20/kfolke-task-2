@@ -16,11 +16,12 @@ fn main() {
     // get standard input stream
     let input = io::stdin();
 
-    //fixa input raderna till string-typ 
+    //alla input raderna
     let mut lines = input
         .lock()
         .lines()
-        .map(|_line| _line.ok().unwrap().to_string);
+        .map(|_line| _line.ok().unwrap());
+        //.collect::<Vec<String>>();
     /* add code here ... */
 
     //get första raden dvs antalet
@@ -36,34 +37,23 @@ fn main() {
         .collect::<Vec<u32>>();
         nums.sort(); //sortera nnummer från minst till störst
     
-    //summan av de största talen 
-    let mut sum: u32 =0;
+    //för att kunna spara summan av de största talen 
+    let mut summa: u32 =0;
 
     //Kolla om antalet tal är jämnt eller udda
     if(n%2)== 0 {
         //antalet tal är jämnt
 
-        //addera alla tal störrelika med medianen till summan
+        //addera alla tal störrelikamed medianen till summan
         for i in (n/2)..n{
-            sum = sum + sum[i as usize];
+            summa = summa + nums[i as usize];
         }
     }
     else{
         //antalet tal är jämnt
-        for i in 
+        for i in ((n-1)/2)..n{
+            summa = summa + nums[i as usize]
+        }
     }
-
-    //bestämmer antalet tal som läses in
-    //let mut n: usize = lines.next().unwrap().parse().unwrap();
-
-    //lagra n stycket tal 
-
-    //bestäm om n är jämn eller udda
-
-    //n är jämn och hitta de n/2 största talen och skriv ut
-
-    //n är udda och hitta de (n+1)/2 största talen och skriv ut
-
-    eprintln!("Kattis skips this comment!");
-    //println!("Print to standard output.");
+    println!("{}", summa);
 }
