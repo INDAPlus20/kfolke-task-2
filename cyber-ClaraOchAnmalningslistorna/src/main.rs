@@ -45,7 +45,7 @@ fn main() {
         let efternamn = lines
             .next().unwrap();
         let efterNamnMedSpace = " ".to_owned() + &efternamn;
-        namnOchEfternamn[j].push_str(efterNamnMedSpace);
+        namnOchEfternamn[j].push_str(&efterNamnMedSpace);
     }
 
     for k in 0..n{
