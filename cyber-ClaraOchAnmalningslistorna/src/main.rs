@@ -25,15 +25,36 @@ fn main() {
     //get första raden dvs antalet
     let n = lines
         .next().unwrap()
-        .parse::<usize>().unwrap();
+        .parse().unwrap();
     /*fixa nåt idk*/
 
     //en array att spara hela namnen
     let mut namnOchEfternamn: Vec<String> = Vec::new();
     
-    for name in 0..(n/2){
-        
+    //en array för att kunna spara alla UNIKA, hela namn
+    let mut unikaNamnOchEfternamn: Vec<String> = Vec::new();
+
+    //loopa igenom första input halvan och spara i arrayen
+    for i in 0..n{
+        let fornamn = lines
+            .next().unwrap();
+        namnOchEfternamn.push(fornamn)
     }
-    eprintln!("Kattis skips this comment!");
-    //println!("Print to standard output.");
+
+    for j in 0..n{
+        let efternamn = lines
+            .next().unwrap();
+        let efterNamnMedSpace = " ".to_owned() + &efternamn;
+        namnOchEfternamn[j].push_str(efterNamnMedSpace);
+    }
+
+    for k in 0..n{
+        let namn = &namnOchEfternamn[k];
+
+        if!unikaNamnOchEfternamn.contains(&namn){
+            unikaNamnOchEfternamn.push(namn.clone());
+        }
+    }
+
+    println!("{}", unikaNamnOchEfternamn.len());
 }
