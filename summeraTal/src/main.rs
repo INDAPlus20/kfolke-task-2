@@ -16,22 +16,25 @@ fn main() {
     // get standard input stream
     let input = io::stdin();
 
-    // fixa 
+    //fixa input raderna till string-typ 
     let mut lines = input
         .lock()
         .lines()
-        .map(|_line| _line.ok().unwrap());
+        .map(|_line| _line.ok().unwrap().to_string);
     /* add code here ... */
+
+    //fixa till första raden dvs antalet
     let n = lines
         .next().unwrap()
-        .parse::<usize>().unwrap();
-    
+        .parse::<u32>().unwrap();
+    //fixa till andra raden som en vektor 
     let mut nums = lines
         .next().unwrap()
         .split_whitespace()
         .map(|_num| _num.parse::<u64>().unwrap())
         .collect::<Vec<u64>>();
-    if
+    
+    if n=
     //bestämmer antalet tal som läses in
     //let mut n: usize = lines.next().unwrap().parse().unwrap();
 
