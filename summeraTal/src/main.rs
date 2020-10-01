@@ -21,7 +21,7 @@ fn main() {
         .lock()
         .lines()
         .map(|_line| _line.ok().unwrap());
-        //.collect::<Vec<String>>();
+        
     /* add code here ... */
 
     //get första raden dvs antalet
