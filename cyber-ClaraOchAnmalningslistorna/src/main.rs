@@ -1,16 +1,12 @@
 
 //ja jag var ju tvungen att lösa denna uppgift pågrund av dess namn hahaha
-/***
- * Template to a Kattis solution.
- * See: https://open.kattis.com/help/rust
- * Author: Viola Söderlund <violaso@kth.se>
- */
+
 /*Är medveten om att jag har lite dålig namngivning, dels att jag har lite 
 ospecifika namn samt att de är lite blandad svengelska vilket jag jobbar på*/
 use std::io;
 use std::io::prelude::*;
 
-/// Kattis calls main function to run your solution.
+
 fn main() {
     // get standard input stream
     let input = io::stdin();
@@ -21,8 +17,8 @@ fn main() {
         .lines()
         .map(|_line| _line.ok().unwrap());
 
-    /* add code here ... */
-    
+    //get första raden dvs antalet
+
     //get första raden dvs antalet
     let n = lines
         .next().unwrap()
@@ -30,32 +26,33 @@ fn main() {
     /*fixa nåt idk*/
 
     //en array att spara hela namnen
-    let mut namnOchEfternamn: Vec<String> = Vec::new();
+    let mut namn_och_efternamn: Vec<String> = Vec::new();
     
     //en array för att kunna spara alla UNIKA, hela namn
-    let mut unikaNamnOchEfternamn: Vec<String> = Vec::new();
+    let mut unika_namn_och_efternamn: Vec<String> = Vec::new();
 
-    //loopa igenom första input halvan och spara i arrayen
-    for i in 0..n{
+    //spara alla förnamn
+    for _i in 0..n{
         let fornamn = lines
             .next().unwrap();
-        namnOchEfternamn.push(fornamn)
+            namn_och_efternamn.push(fornamn)
     }
-
+    //spara alla efternamn tillsammans med ett förnamn
     for j in 0..n{
         let efternamn = lines
             .next().unwrap();
-        let efterNamnMedSpace = " ".to_owned() + &efternamn;
-        namnOchEfternamn[j].push_str(&efterNamnMedSpace);
+        let efternamn_med_space = " ".to_owned() + &efternamn;
+        namn_och_efternamn[j].push_str(&efternamn_med_space);
     }
-
+    //checka om alla namn och efternamn är unika
     for k in 0..n{
-        let namn = &namnOchEfternamn[k];
+        let tmp_namn_och_efternamn = &namn_och_efternamn[k];
 
-        if!unikaNamnOchEfternamn.contains(&namn){
-            unikaNamnOchEfternamn.push(namn.clone());
+        if!unika_namn_och_efternamn.contains(&tmp_namn_och_efternamn){
+            //namnet och efternamnet är unikt och läggs därför till i unik-array
+            unika_namn_och_efternamn.push(tmp_namn_och_efternamn.clone());
         }
     }
-
-    println!("{}", unikaNamnOchEfternamn.len());
+    //antalet unika namn presenteras
+    println!("{}", unika_namn_och_efternamn.len());
 }
