@@ -20,10 +20,24 @@ fn main() {
     let mut lines = input
         .lock()
         .lines()
-        .map(|_line| _line.ok().unwrap().to_string())
-        .collect::<Vec<String>>();
+        .map(|_line| _line.ok().unwrap().parse::<i32>().unwrap())
+        .collect::<Vec<i32>>();
 
     /* add code here ... */
+    
+
+
+    
+    //bestämmer antalet tal som läses in
+    //let mut n: usize = lines.next().unwrap().parse().unwrap();
+
+    //lagra n stycket tal 
+
+    //bestäm om n är jämn eller udda
+
+    //n är jämn och hitta de n/2 största talen och skriv ut
+
+    //n är udda och hitta de (n+1)/2 största talen och skriv ut
 
     eprintln!("Kattis skips this comment!");
     //println!("Print to standard output.");
