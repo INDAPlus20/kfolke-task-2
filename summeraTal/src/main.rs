@@ -1,17 +1,8 @@
-//fn main() {
- //   println!("Hello, world!");
-//}
-
-/***
- * Template to a Kattis solution.
- * See: https://open.kattis.com/help/rust
- * Author: Viola Söderlund <violaso@kth.se>
- */
-
+//Klara Folkes solution till kattis summera tal problem
 use std::io;
 use std::io::prelude::*;
 
-/// Kattis calls main function to run your solution.
+
 fn main() {
     // get standard input stream
     let input = io::stdin();
@@ -35,7 +26,7 @@ fn main() {
         .split_whitespace()
         .map(|component|component.parse::<u32>().unwrap())
         .collect::<Vec<u32>>();
-        nums.sort(); //sortera nnummer från minst till störst
+        nums.sort(); //sortera alla tal från minst till störst
     
     //för att kunna spara summan av de största talen 
     let mut summa: u32 =0;
@@ -51,9 +42,12 @@ fn main() {
     }
     else{
         //antalet tal är jämnt
+        //addera alla tal som är större lika med tal nummer (n+1)/2
         for i in ((n-1)/2)..n{
             summa = summa + nums[i as usize]
         }
     }
+
+    //output av den sökta summan
     println!("{}", summa);
 }
