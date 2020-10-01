@@ -16,18 +16,22 @@ fn main() {
     // get standard input stream
     let input = io::stdin();
 
-    // get input lines as strings
+    // fixa 
     let mut lines = input
         .lock()
         .lines()
-        .map(|_line| _line.ok().unwrap().parse::<i32>().unwrap())
-        .collect::<Vec<i32>>();
-
+        .map(|_line| _line.ok().unwrap());
     /* add code here ... */
+    let n = lines
+        .next().unwrap()
+        .parse::<usize>().unwrap();
     
-
-
-    
+    let mut nums = lines
+        .next().unwrap()
+        .split_whitespace()
+        .map(|_num| _num.parse::<u64>().unwrap())
+        .collect::<Vec<u64>>();
+    if
     //bestämmer antalet tal som läses in
     //let mut n: usize = lines.next().unwrap().parse().unwrap();
 
