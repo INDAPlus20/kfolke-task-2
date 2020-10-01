@@ -27,7 +27,13 @@ fn main() {
         .next().unwrap()
         .parse::<usize>().unwrap();
     /*fixa nåt idk*/
+
+    //en array att spara hela namnen
+    let mut namnOchEfternamn: Vec<String> = Vec::new();
     
+    for name in 0..(n/2){
+        
+    }
     eprintln!("Kattis skips this comment!");
     //println!("Print to standard output.");
 }
